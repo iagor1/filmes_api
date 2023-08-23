@@ -16,4 +16,9 @@ public class FilmesController : ControllerBase
         filmes.Add(filme); // add o filme na lista, o método .Add() é um método de List(lista genérica)
     }
 
+    [HttpGet]
+    public IEnumerable<Filme> GetFilmes()
+    {
+        return filmes;
+    }
 }
