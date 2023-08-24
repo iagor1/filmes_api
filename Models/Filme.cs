@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 public class Filme
 {
+    public int Id { get; set; }
     [Required(ErrorMessage ="Campo titulo vazio !")]
     public string Titulo {get;set;}
     [Required(ErrorMessage ="Campo gênero vazio !")]
