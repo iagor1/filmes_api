@@ -18,9 +18,9 @@ public class FilmesController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<Filme> GetFilmes()
+    public IEnumerable<Filme> GetFilmes([FromQuery]int skip = 0, int take = 20) // skip e take funcionam para paginação, o FromQuerry vai vir
     {
-        return filmes;
+        return filmes.Skip(skip).Take(take);
     }
     
     [HttpGet("{id}")]
