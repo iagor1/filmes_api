@@ -29,13 +29,13 @@ public class FilmesController : ControllerBase
     {
         var filme = filmes.FirstOrDefault(filme => filme.Id == id);
         if (filme == null) return NotFound();
-        return Ok();
+        return Ok(filme);
     }
     [HttpGet("titulos/{name}")]
-    public IActionResult GetByNames(string name)
+    public IActionResult GetByTitulo(string name)
     {
-        var filme = filmes.Find(filme => filme.Titulo == name);
+        var filme = filmes.FindAll(filme => filme.Titulo == name);
         if (filme == null) return NotFound();
-        return Ok();
+        return Ok(filme);
     }
 }
