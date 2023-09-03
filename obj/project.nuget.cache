@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TB6vBDK6bS88RC0ue7ZD7uj4ARSUW51IsA9pP0wIbp1WqYCvrR1JzzDR1gQYYKR19wOPBCkKDe2IbEvv5Mr8nw==",
+  "dgSpecHash": "XK+mdAs+kGNVb/8jLEr9ISBUYNcvjcmUMMm4pPHae8g8wIAJbZZrNcfqZOny0XTiQezAg8SoG1iNgOEAIOnfbw==",
   "success": true,
-  "projectFilePath": "C:\\dev\\Csharp\\filmes_api\\FilmesApi.csproj",
+  "projectFilePath": "C:\\Users\\iagor\\Source\\Repos\\iagor1\\filmes_api\\FilmesApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\iagor\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\iagor\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.10\\microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",

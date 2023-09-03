@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FilmesApi.Migrations
 {
     [DbContext(typeof(FilmeContext))]
-    [Migration("20230901220245_FirstMigration")]
+    [Migration("20230903010017_FirstMigration")]
     partial class FirstMigration
     {
         /// <inheritdoc />
