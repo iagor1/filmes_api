@@ -1,4 +1,6 @@
+using AutoMapper;
 using FilmesApi.Data;
+using FilmesApi.Data.Dtos;
 using FilmesApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,19 +11,21 @@ namespace FilmesApi.Controllers;
 [Route("[controller]")]
 public class FilmesController : ControllerBase
 {
-    public FilmesController(FilmeContext context)
+    private FilmeContext _context;
+    private IMapper _mapper;
+    public FilmesController(FilmeContext context, IMapper mapper)
     {
         _context = context;
+        _mapper = mapper;
     }
 
 
-    private FilmeContext _context;
 
     [HttpPost]
-    public IActionResult AddFilme([FromBody]Filme filme) // recebe o parâmetro filme do tipo Filme(classe)
+    public IActionResult AddFilme([FromBody]CreateFilmeDto filmedto) // recebe o parâmetro filme do tipo Filme(classe)
     //o from body serve pro swagger, significa q vamos fzr input de dados lá
     {
-        
+        Filme filme = _mapper.Map<Filme>(filmedto);
         _context.Filmes.Add(filme);
         _context.SaveChanges();
         return CreatedAtAction(nameof(GetByIdFilmes), new {id = filme.Id}, filme); //o Created retorna o objeto que criamos no metodo GetById, o new id
