@@ -22,6 +22,7 @@ public class FilmesController : ControllerBase
 
 
     [HttpPost]
+    [ProducesResponseType(StatusCodes.Status201Created)]
     public IActionResult AddFilme([FromBody]CreateFilmeDto filmedto) // recebe o parâmetro filme do tipo Filme(classe)
     //o from body serve pro swagger, significa q vamos fzr input de dados lá
     {
@@ -32,12 +33,15 @@ public class FilmesController : ControllerBase
     }// é preciso pois no metodo do get temos o parâmetro ID e o ultimo parametro é o objeto que foi criado
 
     [HttpGet]
-    public IEnumerable<Filme> GetFilmes([FromQuery]int skip = 0, int take = 20) // skip e take funcionam para paginação, o FromQuerry vai vir
+    [ProducesResponseType(StatusCodes.Status200OK)] 
+    public IActionResult GetFilmes([FromQuery]int skip = 0, int take = 20) // skip e take funcionam para paginação, o FromQuerry vai vir
     {
-        return _context.Filmes.Skip(skip).Take(take);
+        var filmes_pagination = _context.Filmes.Skip(skip).Take(take);
+        return(Ok(filmes_pagination));
     }
     
     [HttpGet("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public IActionResult GetByIdFilmes(int id)
     {
         var filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
@@ -45,10 +49,25 @@ public class FilmesController : ControllerBase
         return Ok(filme);
     }
     [HttpGet("titulos/{name}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public IActionResult GetByTitulo(string name)
     {
         var filme = _context.Filmes.Where(filme => filme.Titulo == name);
         if (filme == null) return NotFound();
         return Ok(filme);
+    }
+    /// <summary>
+    /// Delete film by ID
+    /// </summary>
+    /// <returns></returns>
+    [HttpDelete("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public IActionResult DeleteById(int id)
+    {
+        var filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+        if (filme == null) return NotFound();
+        _context.Remove(filme);
+        _context.SaveChanges();
+        return NoContent();
     }
 }

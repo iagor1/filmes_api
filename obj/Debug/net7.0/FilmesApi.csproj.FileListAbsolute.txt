@@ -169,3 +169,5 @@ C:\Users\iagor\Source\Repos\iagor1\filmes_api\obj\Debug\net7.0\refint\FilmesApi.
 C:\Users\iagor\Source\Repos\iagor1\filmes_api\obj\Debug\net7.0\FilmesApi.pdb
 C:\Users\iagor\Source\Repos\iagor1\filmes_api\obj\Debug\net7.0\FilmesApi.genruntimeconfig.cache
 C:\Users\iagor\Source\Repos\iagor1\filmes_api\obj\Debug\net7.0\ref\FilmesApi.dll
+C:\Users\iagor\Source\Repos\iagor1\filmes_api\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\iagor\Source\Repos\iagor1\filmes_api\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
