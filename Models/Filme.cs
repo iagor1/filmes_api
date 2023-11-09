@@ -14,5 +14,6 @@ public class Filme
     [Required]
     [Range(70,600,ErrorMessage ="Duração deve ser entre 70 e 600")]
     public int Duracao {get;set;}
-    
+
+    public virtual ICollection<Session> Sessions { get; set; }
 }
