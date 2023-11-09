@@ -1,4 +1,6 @@
 ﻿
+using FilmesApi.Models;
+
 namespace FilmesApi.Data.Dtos
 {
     public class ReadCineDto
@@ -8,5 +10,6 @@ namespace FilmesApi.Data.Dtos
 
         public string Nome { get; set; }
         public ReadAddressDto ReadAddressDto { get; set; }
+        public virtual ICollection<ReadSessionDto> Sessions { get; set; }
     }
 }
